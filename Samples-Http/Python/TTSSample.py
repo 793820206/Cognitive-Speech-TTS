@@ -1,3 +1,4 @@
+
 #! /usr/bin/env python3
 
 # -*- coding: utf-8 -*-
@@ -16,7 +17,7 @@ from xml.etree import ElementTree
 #Note: The way to get api key:
 #Free: https://www.microsoft.com/cognitive-services/en-us/subscriptions?productId=/products/Bing.Speech.Preview
 #Paid: https://portal.azure.com/#create/Microsoft.CognitiveServices/apitype/Bing.Speech/pricingtier/S0
-apiKey = "Your api key goes here"
+apiKey = "Your api keys goes here"
 
 params = ""
 headers = {"Ocp-Apim-Subscription-Key": apiKey}
@@ -43,11 +44,11 @@ body.set('{http://www.w3.org/XML/1998/namespace}lang', 'en-us')
 voice = ElementTree.SubElement(body, 'voice')
 voice.set('{http://www.w3.org/XML/1998/namespace}lang', 'en-US')
 voice.set('{http://www.w3.org/XML/1998/namespace}gender', 'Female')
-voice.set('name', 'Microsoft Server Speech Text to Speech Voice (en-US, ZiraRUS)')
+voice.set('name', 'Microsoft Server Speech Text to Speech Voice (en-US, Guy24kRUS)')
 voice.text = 'This is a demo to call microsoft text to speech service in Python.'
 
 headers = {"Content-type": "application/ssml+xml", 
-			"X-Microsoft-OutputFormat": "riff-16khz-16bit-mono-pcm", 
+			"X-Microsoft-OutputFormat": "riff-24khz-16bit-mono-pcm", 
 			"Authorization": "Bearer " + accesstoken, 
 			"X-Search-AppId": "07D3234E49CE426DAA29772419F436CA", 
 			"X-Search-ClientID": "1ECFAE91408841A480F00935DC390960", 
